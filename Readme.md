@@ -40,32 +40,42 @@ Dự án phân chia rõ ràng hai luồng chức năng cho **Quản trị viên 
 - **Cơ sở dữ liệu:** MySQL
 - **Web Server:** Apache *(thông qua XAMPP)*
 
----
+
 
 ## 📁 Cấu trúc thư mục
 
 Dự án được tổ chức theo cấu trúc rõ ràng, tách biệt logic:
 
+```
+
 quanlythuvien/
 ├── backend/ # Chứa các file API endpoints
 │ ├── book/
 │ ├── reader/
-│ ├── transaction/
+│ ├── dashboard/
 │ └── user/
+├── transaction/
 ├── config/ # Chứa file kết nối CSDL
 │ └── db_connect.php
 ├── models/ # Chứa các class xử lý logic CSDL
 │ ├── Book.php
 │ ├── Reader.php
 │ └── Transaction.php
-├── js/ # Chứa các file JavaScript cho frontend
+├── main.css
+├── js/
 │ ├── dashboard.js
+│ ├── login.js
+│ ├── register.js
 │ └── user_dashboard.js
-├── create_database.sql # File kịch bản khởi tạo CSDL
-├── dashboard.html # Giao diện trang admin
-├── user_dashboard.html # Giao diện trang độc giả
-├── login.html # Trang đăng nhập
-└── README.md # File hướng dẫn và giới thiệu dự án
+├── create_database.sql
+├── dashboard.html
+├── user_dashboard.html
+├── login.html
+├── register.html
+├── index.html
+└── README.md
+
+```
 
 ## 🚀 Hướng dẫn Cài đặt & Chạy dự án
 
@@ -77,13 +87,14 @@ Clone repository này về máy:
 
 git clone https://github.com/thanhtohieu/quanlythuvien
 Hoặc tải về và giải nén vào thư mục:
-
+```
 C:\xampp\htdocs\quanlythuvien
+```
 2️⃣ Khởi tạo Cơ sở dữ liệu
 Khởi động Apache và MySQL trong XAMPP Control Panel.
-
+```
 Truy cập: http://localhost/phpmyadmin
-
+```
 Tạo một cơ sở dữ liệu mới với tên là library.
 
 Chọn CSDL library, vào tab Import (Nhập) và tải lên file create_database.sql.
@@ -91,18 +102,25 @@ Chọn CSDL library, vào tab Import (Nhập) và tải lên file create_databas
 3️⃣ Cấu hình kết nối
 Mở file config/db_connect.php và đảm bảo các thông tin sau là chính xác:
 
+```
+
 private $host = "127.0.0.1";
 private $db_name = "library";
 private $username = "root";
 private $password = "";
+
+```
+
 4️⃣ Truy cập trang web
 Mở trình duyệt và truy cập vào địa chỉ:
-
-👉 http://localhost/quanlythuvien/login.html
-
+```
+http://localhost/quanlythuvien/login.html
+```
 Nếu bạn đã đổi cổng Apache, hãy dùng địa chỉ:
 http://localhost:[PORT]/quanlythuvien/
 
 🔑 Tài khoản Admin mặc định
-Tên đăng nhập	Mật khẩu
-admin	admin1234
+```
+Tên đăng nhập: admin
+Mật khẩu: admin1234
+```
