@@ -45,7 +45,7 @@ Dự án phân chia rõ ràng hai luồng chức năng cho **Quản trị viên 
 ## 📁 Cấu trúc thư mục
 
 Dự án được tổ chức theo cấu trúc rõ ràng, tách biệt logic:
-
+```
 quanlythuvien/
 ├── backend/ # Chứa các file API endpoints
 │ ├── book/
@@ -66,7 +66,7 @@ quanlythuvien/
 ├── user_dashboard.html # Giao diện trang độc giả
 ├── login.html # Trang đăng nhập
 └── README.md # File hướng dẫn và giới thiệu dự án
-
+```
 ## 🚀 Hướng dẫn Cài đặt & Chạy dự án
 
 Để chạy dự án này trên máy cục bộ, bạn cần có **XAMPP** được cài đặt.
@@ -74,36 +74,39 @@ quanlythuvien/
 ### 1️⃣ Sao chép Project
 
 Clone repository này về máy:
-
+```
 git clone https://github.com/thanhtohieu/quanlythuvien
+```
 Hoặc tải về và giải nén vào thư mục:
-
+```
 C:\xampp\htdocs\quanlythuvien
+```
 2️⃣ Khởi tạo Cơ sở dữ liệu
 Khởi động Apache và MySQL trong XAMPP Control Panel.
-
+```
 Truy cập: http://localhost/phpmyadmin
-
+```
 Tạo một cơ sở dữ liệu mới với tên là library.
 
 Chọn CSDL library, vào tab Import (Nhập) và tải lên file create_database.sql.
 
 3️⃣ Cấu hình kết nối
 Mở file config/db_connect.php và đảm bảo các thông tin sau là chính xác:
-
+```
 private $host = "127.0.0.1";
 private $db_name = "library";
 private $username = "root";
 private $password = "";
+```
 4️⃣ Truy cập trang web
 Mở trình duyệt và truy cập vào địa chỉ:
-
+```
 👉 http://localhost/quanlythuvien/login.html
-
+```
 Nếu bạn đã đổi cổng Apache, hãy dùng địa chỉ:
+```
 http://localhost:[PORT]/quanlythuvien/
-
+```
 🔑 Tài khoản Admin mặc định
-Tên đăng nhập	Mật khẩu
-admin	admin1234
-
+Tên đăng nhập: admin
+Mật khẩu: admin1234
