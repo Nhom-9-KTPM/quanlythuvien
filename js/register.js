@@ -29,6 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
+            // --- THÊM MỚI: KIỂM TRA CÓ CHỮ IN HOA ---
+            // /[A-Z]/ là một Biểu thức chính quy (Regular Expression) để tìm một chữ cái in hoa
+            if (!/[A-Z]/.test(password)) {
+                errorMsg.textContent = "Mật khẩu phải chứa ít nhất một chữ cái in hoa.";
+                return;
+            }
+
             if (password !== confirmPassword) {
                 errorMsg.textContent = "Mật khẩu xác nhận không khớp.";
                 return;

@@ -28,6 +28,14 @@ if (strlen($password) < 6) {
     exit();
 }
 
+// --- THÊM MỚI: KIỂM TRA CÓ CHỮ IN HOA ---
+// preg_match tìm kiếm một ký tự in hoa trong chuỗi mật khẩu
+if (!preg_match('/[A-Z]/', $password)) {
+    http_response_code(400);
+    echo json_encode(["success" => false, "message" => "Mật khẩu phải chứa ít nhất một chữ cái in hoa."]);
+    exit();
+}
+
 // BƯỚC 2: THỰC HIỆN TRUY VẤN VÀ XỬ LÝ LỖI
 try {
     $query = "INSERT INTO users (username, password, role) VALUES (:username, :password, :role)";
